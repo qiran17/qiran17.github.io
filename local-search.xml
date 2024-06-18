@@ -4,6 +4,60 @@
   
   
   <entry>
+    <title>&lt;Java&gt;变量</title>
+    <link href="/2024/06/18/Java-%E5%8F%98%E9%87%8F/"/>
+    <url>/2024/06/18/Java-%E5%8F%98%E9%87%8F/</url>
+    
+    <content type="html"><![CDATA[<h1 id="2-变量"><a href="#2-变量" class="headerlink" title="2 变量"></a>2 变量</h1><blockquote><p>变量：变量是程序的基本组成单位</p></blockquote><blockquote><p>变量的三个基本要素：类型 + 名称 + 值</p></blockquote><blockquote><p>示例：<span class="gray-background">int a &#x3D; 1</span> 类型 int 名称 a 值 1</p></blockquote><p><strong>如何声明变量：</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">int</span> a;<br>a = <span class="hljs-number">100</span>;<br><br><span class="hljs-type">int</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> <span class="hljs-number">100</span>;<br><br><span class="hljs-type">int</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> <span class="hljs-number">5</span>, d;<br></code></pre></td></tr></table></figure><h2 id="2-1-变量使用注意事项"><a href="#2-1-变量使用注意事项" class="headerlink" title="2.1 变量使用注意事项"></a>2.1 变量使用注意事项</h2><ol><li>变量表示内存中的一个存储区域。不同变量，不同类型，占用的空间大小不同。如 <span class="gray-background">int </span> 有 4 byte，而 <span class="gray-background">dobule</span> 有 8 byte。</li><li>该区域有自己的名称 <span class="gray-background">变量名 </span> 和类型 <span class="gray-background">数据类型 </span></li><li>变量必须先声明，后使用。</li><li>变量在同一作用域内不能重名。</li><li>该区域的数据 · 值可以在同一类型范围内变化。</li><li>变量的三个基本要素：类型 + 名称 + 值</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+      <category>&lt;Java&gt;2 变量</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Java变量</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Java概述</title>
+    <link href="/2024/06/18/Java%E6%A6%82%E8%BF%B0/"/>
+    <url>/2024/06/18/Java%E6%A6%82%E8%BF%B0/</url>
+    
+    <content type="html"><![CDATA[<h1 id="1-Java概述"><a href="#1-Java概述" class="headerlink" title="1 Java概述"></a>1 Java概述</h1><p>程序：一系列有序指令的集合</p><h2 id="1-1-Java历史"><a href="#1-1-Java历史" class="headerlink" title="1.1 Java历史"></a>1.1 Java历史</h2><ul><li><p>目前 Java 版权属于甲骨文公司。</p></li><li><p>长期支持的版本只有 Java8 与 Java11。这两个版本也是最多使用的版本。</p></li><li><p>Java SE：标准版</p><p>Java EE：企业版（重要）</p><p>Java ME：小型版（少）</p></li></ul><h2 id="1-2-Java重要特点"><a href="#1-2-Java重要特点" class="headerlink" title="1.2 Java重要特点"></a>1.2 Java重要特点</h2><ol><li><p>Java 语言是<strong>面向对象</strong>的（oop）</p><p>简单来说，面向对象是一种程序设计技术。其重点放在数据（对象）和对象的接口上。</p></li><li><p>Java 语言是<strong>健壮</strong>的。其强类型机制、异常处理、垃圾自动收集是健壮性的保证。</p><p>Java 强调早期问题检测、后期动态检测，及消除易出错的情况。其编译器能检测很多其他语言仅在运行时才会发现的问题。</p></li><li><p>Java 语言是<strong>跨平台性</strong>的：一个编译好的 .class 文件可以在多个不同系统下直接运行。</p><p>Java 中没有 “依赖具体实现” 的地方。其基本数据类型大小、有关运算的行为等都有明确说明。其绝大多数库都能很好地支持平台独立性，而不用担心操作系统。</p></li><li><p>Java 语言是<strong>解释型</strong>的：解释型语言编译后需要解释器才能运行。相对的，编译型语言可以被直接执行。</p><p>Java 解释器能在任何移植了解释器的机器上直接执行 Java 字节码</p></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+      <category>&lt;Java&gt;1 Java概述</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Java概述</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>博客基本操作</title>
     <link href="/2024/01/07/%E5%8D%9A%E5%AE%A2%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"/>
     <url>/2024/01/07/%E5%8D%9A%E5%AE%A2%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
