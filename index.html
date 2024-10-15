@@ -379,13 +379,151 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2024/10/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97%E7%9A%84%E5%BA%94%E7%94%A8/" target="_self">
-          1. 栈与队列的应用
+        <a href="/2024/10/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%93%E9%A2%98-KMP2/" target="_self">
+          2. KMP算法的实现
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2024/10/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97%E7%9A%84%E5%BA%94%E7%94%A8/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/10/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%93%E9%A2%98-KMP2/" target="_self">
+        <div>
+          2. KMP算法的实现2.1 KMP算法的实现思想 (1) 通过指针(下标)i,j使用while函数分别遍历主串与模板串(2) 遍历过程中如果出现主串[i]&#x3D;&#x3D;模板串[j]或者j&#x3D;0，则i与j同时自增。否则j &#x3D; next[j] (查询next数组将其的值赋给j)，直到出现主串[i]&#x3D;&#x3D;模板串[j]或者j&#x3D;0。(3) 遍历结束如
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-10-11 00:00" pubdate>
+              2024-10-11
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%BA%94%E7%94%A8/" class="category-chain-item">数据结构与算法应用</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%BA%94%E7%94%A8/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95/" class="category-chain-item">字符串算法</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95/">#字符串算法</a>
+            
+              <a href="/tags/KMP/">#KMP</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/10/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%93%E9%A2%98-KMP1/" target="_self">
+          1. next数组与nextval数组
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/10/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%93%E9%A2%98-KMP1/" target="_self">
+        <div>
+          1. next数组与nextval数组1.1 求next数组与nextval数组的基本概念需求背景：将模板串与主串进行匹配，来判断该模板串是否是主串的子串。 1.1.1 公共前后缀一般情况下，要想进行模板串与主串的匹配，最简单的方法就是朴素模式匹配法，如果当前位出现不符合则模板串向后移动一位重新进行判断，这种情况下算法的空间复杂度很高。 而公共前后缀则是在当前位出现不符合的时候，模板串当前位之前的
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-10-10 00:00" pubdate>
+              2024-10-10
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%BA%94%E7%94%A8/" class="category-chain-item">数据结构与算法应用</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%BA%94%E7%94%A8/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95/" class="category-chain-item">字符串算法</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95/">#字符串算法</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/10/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97%E7%9A%84%E5%BA%94%E7%94%A8-%E7%AE%80%E5%8D%95%E8%AE%A1%E7%AE%97%E5%99%A8%E7%9A%84%E5%AE%9E%E7%8E%B0/" target="_self">
+          1. 简单计算器的实现
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/10/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97%E7%9A%84%E5%BA%94%E7%94%A8-%E7%AE%80%E5%8D%95%E8%AE%A1%E7%AE%97%E5%99%A8%E7%9A%84%E5%AE%9E%E7%8E%B0/" target="_self">
         <div>
           1 使用栈与队列的思想实现一个简易的计算器实现功能：读入一个只含有+,-,*,&#x2F;的非负整数计算表达式子，计算该表达式的值。 输入：30&#x2F;90-26+97-5-6-13&#x2F;886+51&#x2F;29+7987+57*92 输出：12175.21 思路：中缀转后缀表达式，再用栈与队列的思维计算后缀表达式 C++代码实现如下： 12345678910111213141516
         </div>
@@ -413,6 +551,13 @@
         
   <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%BA%94%E7%94%A8/" class="category-chain-item">数据结构与算法应用</a>
   
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%BA%94%E7%94%A8/%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97%E7%9A%84%E5%BA%94%E7%94%A8/" class="category-chain-item">栈与队列的应用</a>
+  
+  
+
   
 
       </span>
