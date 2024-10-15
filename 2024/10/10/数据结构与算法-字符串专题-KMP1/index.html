@@ -23,11 +23,15 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="1. next数组与nextval数组1.1 求next数组与nextval数组的基本概念需求背景：将模板串与主串进行匹配，来判断该模板串是否是主串的子串。 1.1.1 公共前后缀一般情况下，要想进行模板串与主串的匹配，最简单的方法就是朴素模式匹配法，如果当前位出现不符合则模板串向后移动一位重新进行判断，这种情况下算法的空间复杂度很高。 而公共前后缀则是在当前位出现不符合的时候，模板串当前位之前的">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://qiran17.github.io/2024/10/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%93%E9%A2%98-KMP1/%E5%85%AC%E5%85%B1%E5%89%8D%E5%90%8E%E7%BC%801.jpg">
+<meta property="og:image" content="http://qiran17.github.io/2024/10/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%93%E9%A2%98-KMP1/%E5%85%AC%E5%85%B1%E5%89%8D%E5%90%8E%E7%BC%802.jpg">
+<meta property="og:image" content="http://qiran17.github.io/2024/10/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%93%E9%A2%98-KMP1/next%E6%95%B0%E7%BB%84.jpg">
 <meta property="article:published_time" content="2024-10-09T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-10-15T12:14:05.492Z">
+<meta property="article:modified_time" content="2024-10-15T12:32:27.604Z">
 <meta property="article:author" content="AkiSora">
 <meta property="article:tag" content="字符串算法">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://qiran17.github.io/2024/10/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%93%E9%A2%98-KMP1/%E5%85%AC%E5%85%B1%E5%89%8D%E5%90%8E%E7%BC%801.jpg">
   
   
   
@@ -220,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          921 字
+          901 字
         
       </span>
     
@@ -276,14 +280,14 @@
                 <h1 id="1-next数组与nextval数组"><a href="#1-next数组与nextval数组" class="headerlink" title="1. next数组与nextval数组"></a>1. next数组与nextval数组</h1><h2 id="1-1-求next数组与nextval数组的基本概念"><a href="#1-1-求next数组与nextval数组的基本概念" class="headerlink" title="1.1 求next数组与nextval数组的基本概念"></a>1.1 求next数组与nextval数组的基本概念</h2><p><em>需求背景</em>：将模板串与主串进行匹配，来判断该模板串是否是主串的子串。</p>
 <h3 id="1-1-1-公共前后缀"><a href="#1-1-1-公共前后缀" class="headerlink" title="1.1.1 公共前后缀"></a>1.1.1 公共前后缀</h3><p>一般情况下，要想进行模板串与主串的匹配，最简单的方法就是朴素模式匹配法，如果当前位出现不符合则模板串向后移动一位重新进行判断，这种情况下算法的空间复杂度很高。</p>
 <p>而公共前后缀则是在当前位出现不符合的时候，模板串当前位之前的自符串肯定与主串一致，然后模板串直接后移一段距离，保证移动后的字符串对应主串识别出错位置之前的位置还是一致。而移动后的识别出错位置之前到模板串首位的长度就叫做公共前后缀。</p>
-<p>！<a href="%E5%85%AC%E5%85%B1%E5%89%8D%E5%90%8E%E7%BC%801.jpg">公共前后缀演示1</a></p>
-<p>！<a href="%E5%85%AC%E5%85%B1%E5%89%8D%E5%90%8E%E7%BC%802.jpg">公共前后缀演示2</a></p>
+<p><img src="/2024/10/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%93%E9%A2%98-KMP1/%E5%85%AC%E5%85%B1%E5%89%8D%E5%90%8E%E7%BC%801.jpg" srcset="/img/loading.gif" lazyload alt="公共前后缀演示1"></p>
+<p><img src="/2024/10/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%93%E9%A2%98-KMP1/%E5%85%AC%E5%85%B1%E5%89%8D%E5%90%8E%E7%BC%802.jpg" srcset="/img/loading.gif" lazyload alt="公共前后缀演示2"></p>
 <p>而最长的公共前后缀叫做最长公共前后缀，我们可以创建一个Next[ ]数组来保存该元素之前的所有字符形成的字符串的最长公共前后缀。</p>
 <h3 id="1-1-2-next-数组的构造"><a href="#1-1-2-next-数组的构造" class="headerlink" title="1.1.2 next[ ]数组的构造"></a>1.1.2 next[ ]数组的构造</h3><p>next[ ]数组的构造算法思想：</p>
 <blockquote>
 <p>此时next(j)&#x3D;t,且j之前的next数组都知道。<br>当next(j)&#x3D;t，则模板字符串s[1]-s[t-1]与s[j-t+1]-s[j-1]相同。本质上是通过s[j]和next[j]，推到下一个next数组next[j++]<br>(1) 如果s[j]&#x3D;&#x3D;s[t]，则next[j+1]&#x3D;t+1<br>(2) 如果s[j]!&#x3D;s[t]，则t&#x3D;next[t],直到s[j]&#x3D;&#x3D;s[t]。</p>
 </blockquote>
-<p>！<a href="next%E6%95%B0%E7%BB%84.jpg">next数组表示</a></p>
+<p><img src="/2024/10/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%93%E9%A2%98-KMP1/next%E6%95%B0%E7%BB%84.jpg" srcset="/img/loading.gif" lazyload alt="next数组表示"></p>
 <h2 id="1-2-next-数组代码实现"><a href="#1-2-next-数组代码实现" class="headerlink" title="1.2 next[ ]数组代码实现"></a>1.2 next[ ]数组代码实现</h2><p>C++代码实现如下：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstring&gt;</span></span><br><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> MAXN = <span class="hljs-number">100000</span> + <span class="hljs-number">1</span>;<br><span class="hljs-type">char</span> s[MAXN];<br><span class="hljs-type">int</span> next[MAXN];<br><span class="hljs-type">int</span> nextval[MAXN];<br><br><span class="hljs-comment">//计算next数组(该next数组下标0为空，遍历从下标1开始)</span><br><span class="hljs-comment">//其中有个注意的情况是当t一直没有找到知道next[t]为0赋值到t上，使得s[j]与s[1]比较，最终next[j+1] = 1</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">getNext</span><span class="hljs-params">(<span class="hljs-type">char</span> s[],<span class="hljs-type">int</span> next[])</span></span>&#123;<br>    <span class="hljs-type">int</span> j=<span class="hljs-number">1</span>,t=<span class="hljs-number">0</span>;<br>    next[<span class="hljs-number">1</span>] = <span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> len = <span class="hljs-built_in">strlen</span>(s+<span class="hljs-number">1</span>); <br>    <span class="hljs-keyword">while</span> (j&lt;len)&#123;<br>        <span class="hljs-keyword">if</span>(s[j]==s[t]||t==<span class="hljs-number">0</span>)&#123;<span class="hljs-comment">//如果s[t]与s[j]相等或者下标t为0</span><br>            next[j+<span class="hljs-number">1</span>] = t+<span class="hljs-number">1</span>; <span class="hljs-comment">//则next[j+1]=next[j]+1</span><br>            t++;<br>            j++;<br>        &#125;<br>        <span class="hljs-keyword">else</span> <br>            t = next[t];  <span class="hljs-comment">//将next[t]的值赋给t直到s[j]==s[t]。</span><br>    &#125;<br>    <br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%s&quot;</span>, s+<span class="hljs-number">1</span>);<br>    <span class="hljs-type">int</span> le = <span class="hljs-built_in">strlen</span>(s+<span class="hljs-number">1</span>); <br>    <span class="hljs-built_in">getNext</span>(s,next); <span class="hljs-comment">// 计算 next 数组</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= le; i++) &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>, next[i]); <span class="hljs-comment">// 输出 next[i]+1</span><br>        <span class="hljs-built_in">printf</span>(i &lt; le ? <span class="hljs-string">&quot; &quot;</span> : <span class="hljs-string">&quot;\n&quot;</span>); <span class="hljs-comment">// 输出空格或回车</span><br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure>
 
