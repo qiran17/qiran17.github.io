@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>&lt;数据库&gt;-1 绪论</title>
+    <link href="/2024/11/04/%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%BB%AA%E8%AE%BA/"/>
+    <url>/2024/11/04/%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%BB%AA%E8%AE%BA/</url>
+    
+    <content type="html"><![CDATA[<h1 id="第一章-绪论"><a href="#第一章-绪论" class="headerlink" title="第一章 绪论"></a>第一章 绪论</h1><h2 id="1-1-数据库的四个基本概练"><a href="#1-1-数据库的四个基本概练" class="headerlink" title="1.1 数据库的四个基本概练"></a>1.1 数据库的四个基本概练</h2><ol><li><p>数据：描述事务的符号</p></li><li><p>数据库：数据库是长期存储在计算机内<strong>永久储存</strong>，<strong>有组织</strong>，<strong>可共享</strong>的数据的集合</p></li><li><p>数据库管理系统：是位于用户与操作系统之间的一层数据管理系统。和操作系统一样是计算机的基础软件。(主要功能：实现增删查改)</p></li><li><p>数据库系统：是由数据库、数据库管理系统、应用程序和数据管理员组成的存储、管理、处理和维护数据的系统。</p></li></ol><p><img src="/2024/11/04/%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%BB%AA%E8%AE%BA/sys.jpg" alt="数据库系统"></p><h2 id="1-2-数据库发展阶段"><a href="#1-2-数据库发展阶段" class="headerlink" title="1.2 数据库发展阶段"></a>1.2 数据库发展阶段</h2><p>人工发展阶段 -&gt; 文件系统阶段 -&gt;数据库管理系统(数据独立性高，数据共享性高，冗余度低且易扩充)</p><h2 id="1-3-数据模型"><a href="#1-3-数据模型" class="headerlink" title="1.3 数据模型"></a>1.3 数据模型</h2><h3 id="1-3-1-数据模型类别"><a href="#1-3-1-数据模型类别" class="headerlink" title="1.3.1 数据模型类别"></a>1.3.1 数据模型类别</h3><p>数据模型分为：</p><p>(1) 概念模型</p><blockquote><p><strong>实体</strong>：客观存在并可以区别的事务。<em>例子：人</em><br><strong>属性</strong>：实体所具有的属性。<em>例子：人的鼻子和嘴巴</em><br><strong>码</strong>：唯一标识实体的属性。<em>例子：学号</em><br><strong>实体型</strong>：用属性来描述抽象同类实体。<em>例子：含有鼻子和嘴巴的人</em><br><strong>实体集</strong>：同一类型实体集合。<em>例子：学校</em>  </p></blockquote><p>(2) 逻辑模型(高级语言)</p><blockquote><p>层次模型<br>网状模型<br>关系模型</p></blockquote><p>(3) 物理模型(01底层语言)</p><p>对数据最底层的抽象，描述系统内部表示方法和存钱方法，面向计算机系统</p><h3 id="1-3-2-实体联系"><a href="#1-3-2-实体联系" class="headerlink" title="1.3.2 实体联系"></a>1.3.2 实体联系</h3><p>实体之间的联系：一对一，一对多和多对多<br>实体内的联系：实体各属性间的联系</p><h3 id="1-3-3-ER图-实体-关系图"><a href="#1-3-3-ER图-实体-关系图" class="headerlink" title="1.3.3 ER图(实体-关系图)"></a>1.3.3 ER图(实体-关系图)</h3><p><img src="/2024/11/04/%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%BB%AA%E8%AE%BA/ER.jpg" alt="ER图"></p><h3 id="1-3-4-常用的数据模型"><a href="#1-3-4-常用的数据模型" class="headerlink" title="1.3.4 常用的数据模型"></a>1.3.4 常用的数据模型</h3><p>(1) 层次模型</p><p>层次模型的特点：<strong>有且仅有一个根节点</strong>，<strong>根节点外的节点只有一个双亲节点</strong></p><p><em>例子：二叉树，完全二叉树</em></p><p><img src="/2024/11/04/%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%BB%AA%E8%AE%BA/1.jpg" alt="层次模型"></p><p>(2) 网状模型</p><p>网状模型的特点：<strong>允许多个结点无双亲节点</strong>，<strong>允许多个节点有多个双亲节点</strong></p><p><img src="/2024/11/04/%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%BB%AA%E8%AE%BA/2.jpg" alt="网状模型"></p><p>(3)关系模型：二维表</p><p>相关术语</p><blockquote><p><strong>关系图</strong>：一张二维表。<br><strong>元组</strong>：表中的一行。<br><strong>属性</strong>：表中的一列。<br><strong>码</strong>：也称为码键，表中的某个属性组。<br><strong>域</strong>：相同数据类型值的集合。<br><strong>分量</strong>：元组中的一个属性。  </p></blockquote><p><em>例子：学生登记表</em></p><p><img src="/2024/11/04/%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%BB%AA%E8%AE%BA/3.jpg" alt="学生登记表"></p><h2 id="1-4-数据库系统的结构"><a href="#1-4-数据库系统的结构" class="headerlink" title="1.4 数据库系统的结构"></a>1.4 数据库系统的结构</h2><p><img src="/2024/11/04/%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%BB%AA%E8%AE%BA/4.jpg" alt="数据库系统结构"></p><h3 id="1-4-1-三级模式结构"><a href="#1-4-1-三级模式结构" class="headerlink" title="1.4.1 三级模式结构"></a>1.4.1 三级模式结构</h3><p>三级模式结构：外模式+模式+内模式</p><blockquote><p>外模式：又称用户模式，是数据库用户能使用的部分数据的逻辑结构和特征描述。是数据用户的数据视窗。</p><p>模式：又称逻辑模式，是所有数据的逻辑结构和特征描述。是所有用户的公共数据视图。</p><p>内模式:又称存储模式，一个数据库具有一个内模式，是数据物理结构和存储方式的描述。</p></blockquote><h3 id="1-4-2-二级映象"><a href="#1-4-2-二级映象" class="headerlink" title="1.4.2 二级映象"></a>1.4.2 二级映象</h3><blockquote><p>外模式&#x2F;模式映象：如果模式变了，可对外模式&#x2F;模式映象作出改变，从而使外模式不变</p><p>内模式&#x2F;模式映象：如果数据库或者内模式变了，可对内模式&#x2F;模式映象作出改变，使得模式不变</p></blockquote><h3 id="1-4-3-数据库系统组成"><a href="#1-4-3-数据库系统组成" class="headerlink" title="1.4.3 数据库系统组成"></a>1.4.3 数据库系统组成</h3><blockquote><p>(1) 硬件平台以及数据库<br>(2) 软件、数据库管理系统<br>(3) 人员：开发、管理和使用数据库的人员<br>(4) 数据库管理员职责：数据开发重组，监控数据库运行，对数据库重构定义约束，决定数据库存储结构与策略，觉得数据库信息内容与结构</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>数据库</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>数据库</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2. KMP算法的实现</title>
     <link href="/2024/10/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%93%E9%A2%98-KMP2/"/>
     <url>/2024/10/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%93%E9%A2%98-KMP2/</url>
