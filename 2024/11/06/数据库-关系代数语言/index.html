@@ -16,29 +16,30 @@
   <meta name="author" content="AkiSora">
   <meta name="keywords" content="">
   
-    <meta name="description" content="第一章 绪论1.1 数据库的四个基本概念 数据：描述事务的符号  数据库：数据库是长期存储在计算机内永久储存，有组织，可共享的数据的集合  数据库管理系统：是位于用户与操作系统之间的一层数据管理系统。和操作系统一样是计算机的基础软件。(主要功能：实现增删查改)  数据库系统：是由数据库、数据库管理系统、应用程序和数据管理员组成的存储、管理、处理和维护数据的系统。    1.2 数据库发展阶段人工发">
+    <meta name="description" content="3 关系代数语言3.1 关系代数的三大要素运算对象、运算符、运算结果 3.2 关系代数运算3.2.1 并、交、差3.2.1.1 并表达式： R1∪R2功能：将两个具有相同属性的关系R1和R2合并成一个包含两者所有元组的新关系。示例：假设有关系学生(SID, 姓名)和老师(TID, 姓名)，要将学生和老师的信息合并到一个关系中，表达式为 学生U老师。 3.2.1.2 交表达式： R1 ∩ R2功能：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="&lt;数据库&gt;-1 绪论">
-<meta property="og:url" content="http://qiran17.github.io/2024/11/04/%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%BB%AA%E8%AE%BA/index.html">
+<meta property="og:title" content="&lt;数据库&gt;-3 关系代数语言">
+<meta property="og:url" content="http://qiran17.github.io/2024/11/06/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0%E8%AF%AD%E8%A8%80/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="第一章 绪论1.1 数据库的四个基本概念 数据：描述事务的符号  数据库：数据库是长期存储在计算机内永久储存，有组织，可共享的数据的集合  数据库管理系统：是位于用户与操作系统之间的一层数据管理系统。和操作系统一样是计算机的基础软件。(主要功能：实现增删查改)  数据库系统：是由数据库、数据库管理系统、应用程序和数据管理员组成的存储、管理、处理和维护数据的系统。    1.2 数据库发展阶段人工发">
+<meta property="og:description" content="3 关系代数语言3.1 关系代数的三大要素运算对象、运算符、运算结果 3.2 关系代数运算3.2.1 并、交、差3.2.1.1 并表达式： R1∪R2功能：将两个具有相同属性的关系R1和R2合并成一个包含两者所有元组的新关系。示例：假设有关系学生(SID, 姓名)和老师(TID, 姓名)，要将学生和老师的信息合并到一个关系中，表达式为 学生U老师。 3.2.1.2 交表达式： R1 ∩ R2功能：">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://qiran17.github.io/2024/11/04/%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%BB%AA%E8%AE%BA/sys.jpg">
-<meta property="og:image" content="http://qiran17.github.io/2024/11/04/%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%BB%AA%E8%AE%BA/ER.jpg">
-<meta property="og:image" content="http://qiran17.github.io/2024/11/04/%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%BB%AA%E8%AE%BA/1.jpg">
-<meta property="og:image" content="http://qiran17.github.io/2024/11/04/%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%BB%AA%E8%AE%BA/2.jpg">
-<meta property="og:image" content="http://qiran17.github.io/2024/11/04/%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%BB%AA%E8%AE%BA/3.jpg">
-<meta property="og:image" content="http://qiran17.github.io/2024/11/04/%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%BB%AA%E8%AE%BA/4.jpg">
-<meta property="article:published_time" content="2024-11-03T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-11-10T10:51:06.771Z">
+<meta property="og:image" content="http://qiran17.github.io/2024/11/06/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0%E8%AF%AD%E8%A8%80/1.jpg">
+<meta property="og:image" content="http://qiran17.github.io/2024/11/06/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0%E8%AF%AD%E8%A8%80/2.jpg">
+<meta property="og:image" content="http://qiran17.github.io/2024/11/06/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0%E8%AF%AD%E8%A8%80/3.jpg">
+<meta property="og:image" content="http://qiran17.github.io/2024/11/06/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0%E8%AF%AD%E8%A8%80/4.jpg">
+<meta property="og:image" content="http://qiran17.github.io/2024/11/06/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0%E8%AF%AD%E8%A8%80/5.jpg">
+<meta property="og:image" content="http://qiran17.github.io/2024/11/06/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0%E8%AF%AD%E8%A8%80/6.jpg">
+<meta property="article:published_time" content="2024-11-06T07:59:15.000Z">
+<meta property="article:modified_time" content="2024-11-12T10:11:35.899Z">
 <meta property="article:author" content="AkiSora">
 <meta property="article:tag" content="数据库">
+<meta property="article:tag" content="关系代数语言">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://qiran17.github.io/2024/11/04/%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%BB%AA%E8%AE%BA/sys.jpg">
+<meta name="twitter:image" content="http://qiran17.github.io/2024/11/06/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0%E8%AF%AD%E8%A8%80/1.jpg">
   
   
   
-  <title>&lt;数据库&gt;-1 绪论 - Hexo</title>
+  <title>&lt;数据库&gt;-3 关系代数语言 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -204,7 +205,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="&lt;数据库&gt;-1 绪论"></span>
+            <span id="subtitle" data-typed-text="&lt;数据库&gt;-3 关系代数语言"></span>
           
         </div>
 
@@ -215,8 +216,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-11-04 00:00" pubdate>
-          2024年11月4日 凌晨
+        <time datetime="2024-11-06 15:59" pubdate>
+          2024年11月6日 下午
         </time>
       </span>
     
@@ -227,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          931 字
+          1.2k 字
         
       </span>
     
@@ -238,7 +239,7 @@
         
         
         
-          8 分钟
+          11 分钟
         
       </span>
     
@@ -275,64 +276,36 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">&lt;数据库&gt;-1 绪论</h1>
+            <h1 id="seo-header">&lt;数据库&gt;-3 关系代数语言</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="第一章-绪论"><a href="#第一章-绪论" class="headerlink" title="第一章 绪论"></a>第一章 绪论</h1><h2 id="1-1-数据库的四个基本概念"><a href="#1-1-数据库的四个基本概念" class="headerlink" title="1.1 数据库的四个基本概念"></a>1.1 数据库的四个基本概念</h2><ol>
-<li><p>数据：描述事务的符号</p>
-</li>
-<li><p>数据库：数据库是长期存储在计算机内<strong>永久储存</strong>，<strong>有组织</strong>，<strong>可共享</strong>的数据的集合</p>
-</li>
-<li><p>数据库管理系统：是位于用户与操作系统之间的一层数据管理系统。和操作系统一样是计算机的基础软件。(主要功能：实现增删查改)</p>
-</li>
-<li><p>数据库系统：是由数据库、数据库管理系统、应用程序和数据管理员组成的存储、管理、处理和维护数据的系统。</p>
-</li>
-</ol>
-<p><img src="/2024/11/04/%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%BB%AA%E8%AE%BA/sys.jpg" srcset="/img/loading.gif" lazyload alt="数据库系统"></p>
-<h2 id="1-2-数据库发展阶段"><a href="#1-2-数据库发展阶段" class="headerlink" title="1.2 数据库发展阶段"></a>1.2 数据库发展阶段</h2><p>人工发展阶段 -&gt; 文件系统阶段 -&gt;数据库管理系统(数据独立性高，数据共享性高，冗余度低且易扩充)</p>
-<h2 id="1-3-数据模型"><a href="#1-3-数据模型" class="headerlink" title="1.3 数据模型"></a>1.3 数据模型</h2><h3 id="1-3-1-数据模型类别"><a href="#1-3-1-数据模型类别" class="headerlink" title="1.3.1 数据模型类别"></a>1.3.1 数据模型类别</h3><p>数据模型分为：</p>
-<p>(1) 概念模型</p>
+                <h1 id="3-关系代数语言"><a href="#3-关系代数语言" class="headerlink" title="3 关系代数语言"></a>3 关系代数语言</h1><h2 id="3-1-关系代数的三大要素"><a href="#3-1-关系代数的三大要素" class="headerlink" title="3.1 关系代数的三大要素"></a>3.1 关系代数的三大要素</h2><p>运算对象、运算符、运算结果</p>
+<h2 id="3-2-关系代数运算"><a href="#3-2-关系代数运算" class="headerlink" title="3.2 关系代数运算"></a>3.2 关系代数运算</h2><h3 id="3-2-1-并、交、差"><a href="#3-2-1-并、交、差" class="headerlink" title="3.2.1 并、交、差"></a>3.2.1 并、交、差</h3><h4 id="3-2-1-1-并"><a href="#3-2-1-1-并" class="headerlink" title="3.2.1.1 并"></a>3.2.1.1 并</h4><p>表达式： R1∪R2<br>功能：将两个具有相同属性的关系R1和R2合并成一个包含两者所有元组的新关系。<br>示例：假设有关系学生(SID, 姓名)和老师(TID, 姓名)，要将学生和老师的信息合并到一个关系中，表达式为 学生U老师。</p>
+<h4 id="3-2-1-2-交"><a href="#3-2-1-2-交" class="headerlink" title="3.2.1.2 交"></a>3.2.1.2 交</h4><p>表达式： R1 ∩ R2<br>功能：从两个具有相同属性的关系R1和R2中选取两者共有的元组。<br>示例：假设有关系学生(SID, 姓名)和选课(SID, 课程)，要找出既是学生又在选课中的人，表达式为 学生∩选课。</p>
+<h4 id="3-2-1-3差"><a href="#3-2-1-3差" class="headerlink" title="3.2.1.3差"></a>3.2.1.3差</h4><p>表达式： R1 - R2<br>功能：从具有相同属性的关系R1中去除在关系R2中也存在的元组。<br>示例：假设有关系学生(SID, 姓名)和已注册学生(SID，姓名)，要找出未注册的学生，表达式为 学生 - 已注册学生。</p>
+<h3 id="3-2-2-笛卡尔积"><a href="#3-2-2-笛卡尔积" class="headerlink" title="3.2.2 笛卡尔积"></a>3.2.2 笛卡尔积</h3><p>表达式： R1 × R2<br>功能：将关系R1中的每个元组与关系R2中的每个元组进行组合，得到所有可能的组合。执行两个表的笛卡尔积操作将生成一个结果集，其中包含了R1的每一行与R2的每一行的组合<br><img src="/2024/11/06/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0%E8%AF%AD%E8%A8%80/1.jpg" srcset="/img/loading.gif" lazyload alt="两个关系表"><br><img src="/2024/11/06/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0%E8%AF%AD%E8%A8%80/2.jpg" srcset="/img/loading.gif" lazyload alt="R × S"></p>
+<h3 id="3-2-3-除"><a href="#3-2-3-除" class="headerlink" title="3.2.3 除"></a>3.2.3 除</h3><p>表达式： R1 ÷ R2<br>功能：从关系R1中选取满足条件的元组，使得对于R2中的每个元组，都存在一个R1中的元组与之匹配，同时R1 ÷ R2的结果不保留R2的属性。<br>示例：假设有关系学生(SID, 姓名，课程)和选课表(SID, 课程)，要找出所有选了课程表里课的学生，表达式为学生 ÷ 选课(SID, 姓名)。</p>
+<h3 id="3-2-4-选择"><a href="#3-2-4-选择" class="headerlink" title="3.2.4 选择"></a>3.2.4 选择</h3><p>表达式： σ<sub>条件</sub>(R)<br>功能：从关系 R 中选择满足指定条件的元组。<br>示例：假设有关系学生 (SID, 姓名, 年龄) ，要选择年龄大于20岁的学生，表达式为： σ<sub>年龄&gt;20</sub>(学生) </p>
+<h3 id="3-2-5-投影"><a href="#3-2-5-投影" class="headerlink" title="3.2.5 投影"></a>3.2.5 投影</h3><p>表达式： π<sub>属性列表</sub>(R)<br>功能：从关系R中选取指定的属性列。<br>示例：假设有关系学生(SID, 姓名, 年龄)，要投影出只包含姓名和年龄的信息，表达式为 π<sub>姓名, 年龄</sub>(学生)   </p>
+<p><strong>查询与投影的混合</strong>：π<sub>课程</sub>(σ<sub>Sno&#x3D;’9501’</sub>(学生)) 意思为查找学号为9501的学生并将其所有的课程投影出来</p>
+<h3 id="3-2-6-连接"><a href="#3-2-6-连接" class="headerlink" title="3.2.6 连接"></a>3.2.6 连接</h3><h4 id="3-2-6-1-内连接与外连接"><a href="#3-2-6-1-内连接与外连接" class="headerlink" title="3.2.6.1 内连接与外连接"></a>3.2.6.1 内连接与外连接</h4><blockquote>
+<p>内连接分为：等值连接、自然连接和不等连接<br>这里主要讲解等值连接与自然连接  </p>
+</blockquote>
 <blockquote>
-<p><strong>实体</strong>：客观存在并可以区别的事务。<em>例子：人</em><br><strong>属性</strong>：实体所具有的属性。<em>例子：人的鼻子和嘴巴</em><br><strong>码</strong>：唯一标识实体的属性。<em>例子：学号</em><br><strong>实体型</strong>：用属性来描述抽象同类实体。<em>例子：含有鼻子和嘴巴的人</em><br><strong>实体集</strong>：同一类型实体集合。<em>例子：学校</em>  </p>
+<p>外连接分为左连接(左外连接)、右连接(右外连接)和全外连接<br>这里主要讲解左连接与右连接</p>
 </blockquote>
-<p>(2) 逻辑模型(高级语言)</p>
-<blockquote>
-<p>层次模型<br>网状模型<br>关系模型</p>
-</blockquote>
-<p>(3) 物理模型(01底层语言)</p>
-<p>对数据最底层的抽象，描述系统内部表示方法和存钱方法，面向计算机系统</p>
-<h3 id="1-3-2-实体联系"><a href="#1-3-2-实体联系" class="headerlink" title="1.3.2 实体联系"></a>1.3.2 实体联系</h3><p>实体之间的联系：一对一，一对多和多对多<br>实体内的联系：实体各属性间的联系</p>
-<h3 id="1-3-3-ER图-实体-关系图"><a href="#1-3-3-ER图-实体-关系图" class="headerlink" title="1.3.3 ER图(实体-关系图)"></a>1.3.3 ER图(实体-关系图)</h3><p><img src="/2024/11/04/%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%BB%AA%E8%AE%BA/ER.jpg" srcset="/img/loading.gif" lazyload alt="ER图"></p>
-<h3 id="1-3-4-常用的数据模型"><a href="#1-3-4-常用的数据模型" class="headerlink" title="1.3.4 常用的数据模型"></a>1.3.4 常用的数据模型</h3><p>(1) 层次模型</p>
-<p>层次模型的特点：<strong>有且仅有一个根节点</strong>，<strong>根节点外的节点只有一个双亲节点</strong></p>
-<p><em>例子：二叉树，完全二叉树</em></p>
-<p><img src="/2024/11/04/%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%BB%AA%E8%AE%BA/1.jpg" srcset="/img/loading.gif" lazyload alt="层次模型"></p>
-<p>(2) 网状模型</p>
-<p>网状模型的特点：<strong>允许多个结点无双亲节点</strong>，<strong>允许多个节点有多个双亲节点</strong></p>
-<p><img src="/2024/11/04/%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%BB%AA%E8%AE%BA/2.jpg" srcset="/img/loading.gif" lazyload alt="网状模型"></p>
-<p>(3)关系模型：二维表</p>
-<p>相关术语</p>
-<blockquote>
-<p><strong>关系图</strong>：一张二维表。<br><strong>元组</strong>：表中的一行。<br><strong>属性</strong>：表中的一列。<br><strong>码</strong>：也称为码键，表中的某个属性组。<br><strong>域</strong>：相同数据类型值的集合。<br><strong>分量</strong>：元组中的一个属性。  </p>
-</blockquote>
-<p><em>例子：学生登记表</em></p>
-<p><img src="/2024/11/04/%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%BB%AA%E8%AE%BA/3.jpg" srcset="/img/loading.gif" lazyload alt="学生登记表"></p>
-<h2 id="1-4-数据库系统的结构"><a href="#1-4-数据库系统的结构" class="headerlink" title="1.4 数据库系统的结构"></a>1.4 数据库系统的结构</h2><p><img src="/2024/11/04/%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%BB%AA%E8%AE%BA/4.jpg" srcset="/img/loading.gif" lazyload alt="数据库系统结构"></p>
-<h3 id="1-4-1-三级模式结构"><a href="#1-4-1-三级模式结构" class="headerlink" title="1.4.1 三级模式结构"></a>1.4.1 三级模式结构</h3><p>三级模式结构：外模式+模式+内模式</p>
-<blockquote>
-<p>外模式：又称用户模式，是数据库用户能使用的部分数据的逻辑结构和特征描述。是数据用户的数据视窗。</p>
-<p>模式：又称逻辑模式，是所有数据的逻辑结构和特征描述。是所有用户的公共数据视图。</p>
-<p>内模式:又称存储模式，一个数据库具有一个内模式，是数据物理结构和存储方式的描述。</p>
-</blockquote>
-<h3 id="1-4-2-二级映象"><a href="#1-4-2-二级映象" class="headerlink" title="1.4.2 二级映象"></a>1.4.2 二级映象</h3><blockquote>
-<p>外模式&#x2F;模式映象：如果模式变了，可对外模式&#x2F;模式映象作出改变，从而使外模式不变</p>
-<p>内模式&#x2F;模式映象：如果数据库或者内模式变了，可对内模式&#x2F;模式映象作出改变，使得模式不变</p>
-</blockquote>
-<h3 id="1-4-3-数据库系统组成"><a href="#1-4-3-数据库系统组成" class="headerlink" title="1.4.3 数据库系统组成"></a>1.4.3 数据库系统组成</h3><blockquote>
-<p>(1) 硬件平台以及数据库<br>(2) 软件、数据库管理系统<br>(3) 人员：开发、管理和使用数据库的人员<br>(4) 数据库管理员职责：数据开发重组，监控数据库运行，对数据库重构定义约束，决定数据库存储结构与策略，觉得数据库信息内容与结构</p>
-</blockquote>
+<h4 id="3-2-6-2-自然连接"><a href="#3-2-6-2-自然连接" class="headerlink" title="3.2.6.2 自然连接"></a>3.2.6.2 自然连接</h4><p>表达式：R1 ⨝ R2<br>自然连接是一种特殊的等值连接，要求表中的分量有相同的属性字段，<br>条件为相同的属性字段值相等，再将表中重复的属性字段去掉，称为自然连接。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">Select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> table1 <span class="hljs-keyword">natural</span> <span class="hljs-keyword">join</span> table2<br></code></pre></td></tr></table></figure>
+<p><img src="/2024/11/06/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0%E8%AF%AD%E8%A8%80/3.jpg" srcset="/img/loading.gif" lazyload alt="自然连接"></p>
+<h4 id="3-2-6-3-等值连接"><a href="#3-2-6-3-等值连接" class="headerlink" title="3.2.6.3 等值连接"></a>3.2.6.3 等值连接</h4><p>表达式：R1 ⨝ R2<br>等值连接基本与自然连接相同，不同之处在于自然连接只能是同名属性的等值连接，<br>而等值连接可以使用using或on子句来指定连接条件，连接条件中指出某两字段相等（可以不同名）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> a_table a <span class="hljs-keyword">join</span> b_table b <span class="hljs-keyword">on</span> a.a_id <span class="hljs-operator">=</span> b.b_id<br></code></pre></td></tr></table></figure>
+<p><img src="/2024/11/06/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0%E8%AF%AD%E8%A8%80/4.jpg" srcset="/img/loading.gif" lazyload alt="等值连接"><br><img src="/2024/11/06/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0%E8%AF%AD%E8%A8%80/5.jpg" srcset="/img/loading.gif" lazyload alt="等值连接与自然连接的联系"></p>
+<h4 id="3-2-6-4-悬浮元组"><a href="#3-2-6-4-悬浮元组" class="headerlink" title="3.2.6.4 悬浮元组"></a>3.2.6.4 悬浮元组</h4><p>两个关系R和S在做自然连接时，关系R中某些元组有可能在S中不存在公共属性上值相等的元组，<br>从而造成R中这些元组在操作时被舍弃了，这些被舍弃的元组称为悬浮元组。</p>
+<h4 id="3-2-6-4-左连接"><a href="#3-2-6-4-左连接" class="headerlink" title="3.2.6.4 左连接"></a>3.2.6.4 左连接</h4><p>表达式：R1 ⟕<sub>条件</sub> R2<br>功能：返回左表R1中所有行，以及右表R2中匹配的行。即只保留左边关系R中的悬浮元组，属性缺失的地方用null。<br>示例：假设有表A(ID, Name)和表B(ID, Age)，要获取所有学生的姓名和年龄信息，<br>包括那些没有年龄信息的学生，可以使用左连接：A ⟕<sub>ID&#x3D;A.ID</sub>B。</p>
+<h4 id="3-2-6-5-右连接"><a href="#3-2-6-5-右连接" class="headerlink" title="3.2.6.5 右连接"></a>3.2.6.5 右连接</h4><p>表达式：R1 ⟖<sub>条件</sub>R2<br>功能：返回右表R2中所有行，以及左表R1中匹配的行。即只保留左边关系R中的悬浮元组，属性缺失的地方用null。<br>示例：假设有表A(ID, Name)和表B(ID, Age)，要获取所有具有年龄信息的学生的姓名和<br>年龄信息，包括那些没有姓名信息的学生，可以使用右连接：A ⟖<sub>ID&#x3D;B.ID</sub>B   </p>
+<p><img src="/2024/11/06/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0%E8%AF%AD%E8%A8%80/6.jpg" srcset="/img/loading.gif" lazyload alt="左连接与右连接"></p>
 
                 
               </div>
@@ -368,6 +341,8 @@
       
         <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="print-no-link">#数据库</a>
       
+        <a href="/tags/%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0%E8%AF%AD%E8%A8%80/" class="print-no-link">#关系代数语言</a>
+      
     </div>
   
 </div>
@@ -378,8 +353,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>&lt;数据库&gt;-1 绪论</div>
-      <div>http://qiran17.github.io/2024/11/04/数据库-绪论/</div>
+      <div>&lt;数据库&gt;-3 关系代数语言</div>
+      <div>http://qiran17.github.io/2024/11/06/数据库-关系代数语言/</div>
     </div>
     <div class="license-meta">
       
@@ -391,7 +366,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年11月4日</div>
+          <div>2024年11月6日</div>
         </div>
       
       
@@ -423,18 +398,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/11/05/%E6%95%B0%E6%8D%AE%E5%BA%93-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B1%BB%E5%88%AB%E4%B8%8E%E7%89%B9%E7%82%B9/" title="&lt;数据库&gt;-2 数据库类别与特点">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">&lt;数据库&gt;-2 数据库类别与特点</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/10/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%93%E9%A2%98-KMP2/" title="2. KMP算法的实现">
-                        <span class="hidden-mobile">2. KMP算法的实现</span>
+                      <a href="/2024/11/05/%E6%95%B0%E6%8D%AE%E5%BA%93-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B1%BB%E5%88%AB%E4%B8%8E%E7%89%B9%E7%82%B9/" title="&lt;数据库&gt;-2 数据库类别与特点">
+                        <span class="hidden-mobile">&lt;数据库&gt;-2 数据库类别与特点</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
